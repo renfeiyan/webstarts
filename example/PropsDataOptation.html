@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>propsData option</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>propsData option</h1>
+<hr>
+<header></header>
+<script type="text/javascript">
+   var header_a = Vue.extend({
+       template:`<p>{{message}}+{{a}}</p>`,
+       data:function(){
+           return {
+               message:'hello jajkdashdjakda'
+           }
+       },
+       props:['a']
+   });
+   new header_a({propsData:{a:165}}).$mount('header'); //挂载到<header>上
+</script>
+</body>
+</html>

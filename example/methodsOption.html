@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>methods option</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>methods option方法选项</h1>
+<hr>
+<div id="app">
+    {{a}}
+    <p><button @click="add(2,$event)">点我加2</button></p>
+    <btn @click.native ="add(3)"></btn>
+</div>
+    <p><button onclick="app.add(4)">外部调用构造器里的方法-点我加4</button></p>
+<script type="text/javascript">
+    var btn = {
+        template:`<button>组件—点我加3</button>`
+    };
+    var app = new Vue({
+        el:'#app',
+        data:{
+            a:1
+        },
+        components:{
+            "btn":btn
+        },
+        methods:{
+            add:function (num,event) {
+                if (num!=''){
+                    this.a+=num;
+                }else{
+                    this.a++;
+                }
+                console.log(event);
+            }
+        }
+    })
+    // 传递的$event参数都是关于你点击鼠标的一些事件和属性。
+    //native 给组件绑定构造器里的原生事件。
+    //构造器
+</script>
+</body>
+</html>
