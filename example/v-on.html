@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>v-on实例</h1>
+<hr>
+<div id="app">
+   本场比赛得分：{{grades}}
+    <p>
+        <button v-on:click = 'addGrades'>加分</button>
+        <button v-on:click = 'subtractGrdes'>减分</button>
+        <br>
+        <input type="text" v-on:keyup.enter="onEnter" v-model="grades2">
+    </p>
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            grades:0,
+            grades2 :3
+        },
+        methods:{
+            addGrades:function(){
+                this.grades++;
+            },
+            subtractGrdes:function () {
+                this.grades--;
+            },
+            onEnter:function () {
+                this.grades = this.grades + parseInt(this.grades2);
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-pre & v-cloak & v-once  实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>v-pre & v-cloak & v-once  实例</h1>
+<hr>
+<div id="app">
+    <div v-pre>{{mes}}</div>
+    <div v-cloak>在页面渲染完成后才显示!</div>
+    <div v-once>{{mes}} v-once只在第一渲染时进行渲染</div>
+    <div><input type="text" v-model="mes"></div>
+    <div>{{mes}}</div>
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            mes:'helloWorld!'
+        }
+    })
+</script>
+</body>
+</html>

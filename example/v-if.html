@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if and v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>helloWorld</h1>
+<hr>
+<div id="app">
+    <!--v-if和v-else是要一起出现的，进行判断-->
+    <!--<div v-if="isLogin">您好啊 任巧巧！</div>-->
+    <!--<div v-else>您还没有登陆，请登录!</div>-->
+    <div v-show="isLogin">您好啊 任巧巧！(v-show只是设置了dispay=""属性)</div>
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data:{
+            isLogin:true
+        }
+    })
+
+
+</script>
+</body>
+</html>

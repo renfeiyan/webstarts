@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component组件实例3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>Component组件实例3</h1>
+<hr>
+<div id="app">
+   <panda></panda>
+</div>
+
+<script type="text/javascript">
+    var city = {
+        template:`<div>Sichuan of China</div>`
+    }
+    var panda = {
+        template:`<div style="border:1px solid red;width: 160px;">
+                    <p>Panda from China !!</p>
+                    <city></city>
+                  </div>`,
+        components:{
+            "city":city
+        }
+    }
+    var app = new Vue({
+        el:'#app',
+        components:{
+            "panda":panda
+        }
+    })
+</script>
+</body>
+</html>

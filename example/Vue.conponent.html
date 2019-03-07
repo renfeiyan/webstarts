@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component组件实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>Component组件实例1</h1>
+<hr>
+<div id="app">
+    <qiaoqiao></qiaoqiao>
+    <qiaoqiao></qiaoqiao>
+    <panda></panda>
+    <panda></panda>
+</div>
+
+<script type="text/javascript">
+    //注册全局组件
+    Vue.component('qiaoqiao',{
+        template:`<div style="color:red">全局化注册qiaoqiao标签</div>`
+    })
+    var app = new Vue({
+        el:'#app',
+        components:{
+            "panda":{
+                template: `<div style="color:greenyellow">局部注册的panda标签</div>`
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.extend 扩展实例构造器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<h1>vue.extend 扩展实例构造器</h1>
+<hr>
+<!--//此方式一般用于组件中-->
+<div  id="author"></div>
+<script type="text/javascript">
+    var authorExtend = Vue.extend({
+        template:"<p><a :href='authorURl'>{{authorName}}</a> </p>",
+        data:function(){
+            return{
+                authorName:'任巧巧',
+                authorURl:"http://jspang.com"
+            }
+         }
+    });
+    new authorExtend().$mount('#author');//绑定标签
+
+</script>
+</body>
+</html>
